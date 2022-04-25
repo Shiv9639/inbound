@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<configuration>
+<conversionRule conversionWord="crlf" converterClass="org.owasp.security.logging.mask.CRLFConverter" />
+	<appender name="STDOUT"
+		class="ch.qos.logback.core.ConsoleAppender">
+		<encoder
+			class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<pattern>%-30(%d{dd-MMM-yyyy}  %d{HH:mm:ss.SSS}  %-5level  [%thread] %logger{36} - %crlf(%.-300msg) %n)</pattern>			
+		</encoder>
+	</appender>
+
+	
+	<logger name="ch.qos.logback" level="WARN" />	
+  	<logger name="org.hibernate" level="WARN" />
+
+	<root level="INFO">
+		<appender-ref ref="STDOUT" />
+	</root>
+</configuration>
